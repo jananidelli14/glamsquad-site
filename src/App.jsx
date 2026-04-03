@@ -16,9 +16,9 @@ const IMG = {
   g6:        "https://static.wixstatic.com/media/ad4c49_622ba158b3374b25a629201d266b2d69~mv2.jpeg/v1/fill/w_400,h_300,q_90,enc_avif,quality_auto/ad4c49_622ba158b3374b25a629201d266b2d69~mv2.jpeg",
 };
 
-const WHATSAPP = "https://wa.me/916379522874?text=Hi!%20I'd%20like%20to%20book%20a%20service.";
-const BOOKING  = "https://dingg.app/booking/the-glamsquad-salon-mylapore";
-const CALL     = "tel:+916379522874";
+const WHATSAPP = "https://wa.me/911234567890";
+const BOOKING  = "https://example.com/booking";
+const CALL     = "tel:+911234567898";
 
 /* colour tokens */
 const C = {
@@ -107,37 +107,43 @@ function Nav() {
       transition:"all .4s ease", padding: sc?"12px 0":"20px 0" }}>
       <div style={{ maxWidth:1200,margin:"0 auto",padding:"0 28px",display:"flex",alignItems:"center",justifyContent:"space-between" }}>
         <a href="#" style={{ display:"flex",flexDirection:"column",lineHeight:1.1 }}>
-          <span style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:26,color:C.deepRose,fontWeight:600 }}>GlamSquad</span>
-          <span style={{ fontSize:9,color:C.muted,letterSpacing:3.5,textTransform:"uppercase" }}>Alwarpet · Chennai</span>
+          <span style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:26,color:C.deepRose,fontWeight:600 }}>GlowBeauty</span>
+          <span style={{ fontSize:9,color:C.muted,letterSpacing:3.5,textTransform:"uppercase" }}>Premium Salon · Your City</span>
         </a>
-        {/* desktop */}
-        <div className="hide-m" style={{ gap:32,alignItems:"center" }}>
-          {navLinks.map(l => (
-            <a key={l} href={`#${l.toLowerCase().replace(" ","-")}`}
-              style={{ fontFamily:"'DM Sans'",fontSize:13,color:C.muted,letterSpacing:.3,transition:"color .2s" }}
-              onMouseEnter={e=>(e.target.style.color=C.deepRose)}
-              onMouseLeave={e=>(e.target.style.color=C.muted)}>{l}</a>
-          ))}
-          <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn-rose" style={{ padding:"10px 24px",fontSize:12 }}>Book Now</a>
-        </div>
-        {/* hamburger */}
-        <button onClick={()=>setMo(!mo)} className="show-m"
-          style={{ background:"none",border:"none",cursor:"pointer",fontSize:26,color:C.deepRose,alignItems:"center" }}>
-          {mo?"✕":"☰"}
-        </button>
-      </div>
-      {mo && (
-        <div style={{ background:C.white,borderTop:`1px solid ${C.rose}50`,padding:"24px 28px",display:"flex",flexDirection:"column",gap:20,animation:"fadeSlide .3s ease" }}>
-          {navLinks.map(l=>(
-            <a key={l} href={`#${l.toLowerCase().replace(" ","-")}`} onClick={()=>setMo(false)}
-              style={{ fontFamily:"'DM Sans'",fontSize:16,color:C.text }}>{l}</a>
-          ))}
-          <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn-rose" style={{ textAlign:"center" }}>Book Appointment</a>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-wa" style={{ justifyContent:"center" }}>💬 WhatsApp</a>
-        </div>
-      )}
-    </nav>
-  );
+        /* desktop */
+<div className="hide-m" style={{ gap:32,alignItems:"center" }}>
+  {navLinks.map(l => (
+    <a key={l} href={`#${l.toLowerCase().replace(" ","-")}`}
+      style={{ fontFamily:"'DM Sans'",fontSize:13,color:C.muted,letterSpacing:.3,transition:"color .2s" }}
+      onMouseEnter={e=>(e.target.style.color=C.deepRose)}
+      onMouseLeave={e=>(e.target.style.color=C.muted)}>{l}</a>
+  ))}
+  <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn-rose" style={{ padding:"10px 24px",fontSize:12 }}>
+    Book Demo
+  </a>
+</div>
+{/* hamburger */}
+<button onClick={()=>setMo(!mo)} className="show-m"
+  style={{ background:"none",border:"none",cursor:"pointer",fontSize:26,color:C.deepRose,alignItems:"center" }}>
+  {mo?"✕":"☰"}
+</button>
+</div>
+{mo && (
+  <div style={{ background:C.white,borderTop:`1px solid ${C.rose}50`,padding:"24px 28px",display:"flex",flexDirection:"column",gap:20,animation:"fadeSlide .3s ease" }}>
+    {navLinks.map(l=>(
+      <a key={l} href={`#${l.toLowerCase().replace(" ","-")}`} onClick={()=>setMo(false)}
+        style={{ fontFamily:"'DM Sans'",fontSize:16,color:C.text }}>{l}</a>
+    ))}
+    <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn-rose" style={{ textAlign:"center" }}>
+      Book Demo Appointment
+    </a>
+    <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-wa" style={{ justifyContent:"center" }}>
+      💬 WhatsApp
+    </a>
+  </div>
+)}
+</nav>
+);
 }
 
 /* ═══ HERO ═══ */
@@ -160,65 +166,78 @@ function Hero() {
       </svg>
 
       <div style={{ maxWidth:1200,margin:"0 auto",padding:"110px 28px 60px",width:"100%",display:"grid",gridTemplateColumns:"1fr 1fr",gap:56,alignItems:"center" }} className="hero-grid">
-        {/* LEFT */}
-        <div style={{ opacity:ld?1:0,transform:ld?"none":"translateY(28px)",transition:"all .9s ease" }}>
-          <div style={{ display:"inline-flex",alignItems:"center",gap:8,background:`rgba(196,128,106,.1)`,border:`1px solid rgba(196,128,106,.28)`,borderRadius:50,padding:"8px 18px",marginBottom:28 }}>
-            <span style={{ fontSize:14 }}>✨</span>
-            <span style={{ fontFamily:"'DM Sans'",fontSize:12,color:C.deepRose,letterSpacing:1.5,textTransform:"uppercase",fontWeight:500 }}>Get ₹500 OFF First Service</span>
-          </div>
-          <h1 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(48px,6.5vw,84px)",lineHeight:1.04,color:C.text,fontWeight:400,marginBottom:8 }}>
-            smooth.<br/>
-            <em style={{ color:C.deepRose,fontStyle:"italic" }}>polished.</em><br/>
-            effortless.
-          </h1>
-          <p style={{ fontFamily:"'DM Sans'",fontSize:16,color:C.muted,lineHeight:1.7,margin:"22px 0 6px",fontWeight:300 }}>
-            Beauty from just <strong style={{ color:C.deepRose,fontWeight:500 }}>₹999 only</strong>
-          </p>
-          <p style={{ fontFamily:"'DM Sans'",fontSize:15,color:C.muted,lineHeight:1.7,margin:"0 0 36px",fontWeight:300 }}>
-            From brows to toes — experience precision care that feels as good as it looks.
-          </p>
-          <div style={{ display:"flex",gap:14,flexWrap:"wrap",marginBottom:48 }} className="cta-btns">
-            <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn-rose">Book Appointment</a>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-wa">💬 WhatsApp Us</a>
-          </div>
-          {/* stats */}
-          <div style={{ display:"flex",gap:44 }} className="stats-row">
-            {[["4.8★","Google Rating"],["15k+","Happy Clients"],["9AM–9PM","Open All Days"]].map(([n,l])=>(
-              <div key={l}>
-                <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:32,color:C.deepRose,fontWeight:600,lineHeight:1 }}>{n}</div>
-                <div style={{ fontFamily:"'DM Sans'",fontSize:11,color:C.muted,letterSpacing:1.5,textTransform:"uppercase",marginTop:4 }}>{l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+       {/* LEFT */}
+<div style={{ opacity:ld?1:0,transform:ld?"none":"translateY(28px)",transition:"all .9s ease" }}>
+  <div style={{ display:"inline-flex",alignItems:"center",gap:8,background:`rgba(196,128,106,.1)`,border:`1px solid rgba(196,128,106,.28)`,borderRadius:50,padding:"8px 18px",marginBottom:28 }}>
+    <span style={{ fontSize:14 }}>✨</span>
+    <span style={{ fontFamily:"'DM Sans'",fontSize:12,color:C.deepRose,letterSpacing:1.5,textTransform:"uppercase",fontWeight:500 }}>
+      Demo Offer – ₹500 OFF First Service
+    </span>
+  </div>
+
+  <h1 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(48px,6.5vw,84px)",lineHeight:1.04,color:C.text,fontWeight:400,marginBottom:8 }}>
+    smooth.<br/>
+    <em style={{ color:C.deepRose,fontStyle:"italic" }}>polished.</em><br/>
+    effortless.
+  </h1>
+
+  <p style={{ fontFamily:"'DM Sans'",fontSize:16,color:C.muted,lineHeight:1.7,margin:"22px 0 6px",fontWeight:300 }}>
+    Beauty from just <strong style={{ color:C.deepRose,fontWeight:500 }}>₹999 only</strong>
+  </p>
+
+  <p style={{ fontFamily:"'DM Sans'",fontSize:15,color:C.muted,lineHeight:1.7,margin:"0 0 36px",fontWeight:300 }}>
+    From brows to toes — experience precision care that feels as good as it looks.
+  </p>
+
+  <div style={{ display:"flex",gap:14,flexWrap:"wrap",marginBottom:48 }} className="cta-btns">
+    <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn-rose">
+      Book Demo Appointment
+    </a>
+    <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-wa">
+      💬 WhatsApp Us
+    </a>
+  </div>
+
+  {/* stats */}
+  <div style={{ display:"flex",gap:44 }} className="stats-row">
+    {[["★ Demo","Sample Rating"],["1k+","Sample Clients"],["9AM–9PM","Sample Hours"]].map(([n,l])=>(
+      <div key={l}>
+        <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:32,color:C.deepRose,fontWeight:600,lineHeight:1 }}>{n}</div>
+        <div style={{ fontFamily:"'DM Sans'",fontSize:11,color:C.muted,letterSpacing:1.5,textTransform:"uppercase",marginTop:4 }}>{l}</div>
+      </div>
+    ))}
+  </div>
+</div>
 
         {/* RIGHT */}
-        <div className="hero-img-wrap" style={{ position:"relative",opacity:ld?1:0,transform:ld?"none":"translateX(28px)",transition:"all 1.1s ease .2s" }}>
-          <div style={{ borderRadius:"60% 40% 55% 45%/50% 45% 55% 50%",overflow:"hidden",aspectRatio:"3/4",background:C.rose,position:"relative" }}>
-            <img src={IMG.hero} alt="Manicure Pedicure at GlamSquad" style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top" }}/>
-            <div style={{ position:"absolute",inset:0,background:`linear-gradient(to top,${C.deepRose}22 0%,transparent 55%)` }}/>
-          </div>
-          {/* floating cards */}
-          <div style={{ position:"absolute",bottom:44,left:-32,background:C.white,borderRadius:18,padding:"14px 20px",boxShadow:"0 12px 40px rgba(196,128,106,.25)",animation:"floatUp 3s ease-in-out infinite" }}>
-            <div style={{ fontFamily:"'DM Sans'",fontSize:11,color:C.muted,marginBottom:3 }}>⭐ Certified Therapists</div>
-            <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:19,color:C.deepRose,fontWeight:600 }}>15,000+ Clients</div>
-          </div>
-          <div style={{ position:"absolute",top:28,right:-24,background:C.deepRose,borderRadius:14,padding:"10px 16px",color:"#fff",boxShadow:`0 8px 24px ${C.deepRose}55`,animation:"floatUp 3.5s ease-in-out infinite .5s" }}>
-            <div style={{ fontFamily:"'DM Sans'",fontSize:11,letterSpacing:1 }}>Premium Salon</div>
-            <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:15,fontWeight:600 }}>Alwarpet, Chennai</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+<div className="hero-img-wrap" style={{ position:"relative",opacity:ld?1:0,transform:ld?"none":"translateX(28px)",transition:"all 1.1s ease .2s" }}>
+  <div style={{ borderRadius:"60% 40% 55% 45%/50% 45% 55% 50%",overflow:"hidden",aspectRatio:"3/4",background:C.rose,position:"relative" }}>
+    <img src={IMG.hero} alt="Manicure Pedicure Service" style={{ width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top" }}/>
+    <div style={{ position:"absolute",inset:0,background:`linear-gradient(to top,${C.deepRose}22 0%,transparent 55%)` }}/>
+  </div>
+
+  {/* floating cards */}
+  <div style={{ position:"absolute",bottom:44,left:-32,background:C.white,borderRadius:18,padding:"14px 20px",boxShadow:"0 12px 40px rgba(196,128,106,.25)",animation:"floatUp 3s ease-in-out infinite" }}>
+    <div style={{ fontFamily:"'DM Sans'",fontSize:11,color:C.muted,marginBottom:3 }}>⭐ Certified Therapists</div>
+    <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:19,color:C.deepRose,fontWeight:600 }}>1,000+ Happy Clients</div>
+  </div>
+
+  <div style={{ position:"absolute",top:28,right:-24,background:C.deepRose,borderRadius:14,padding:"10px 16px",color:"#fff",boxShadow:`0 8px 24px ${C.deepRose}55`,animation:"floatUp 3.5s ease-in-out infinite .5s" }}>
+    <div style={{ fontFamily:"'DM Sans'",fontSize:11,letterSpacing:1 }}>Premium Salon</div>
+    <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:15,fontWeight:600 }}>Demo Location</div>
+  </div>
+</div>
+</div>
+</section>
+);
 }
 
 /* ═══ TRUST TICKER ═══ */
 function TrustStrip() {
   const items = [
-    "🧖‍♀️ Dermatologist-approved products","📍 Exclusive Alwarpet location","⭐ 4.8 Google Rating",
-    "🧼 Single-use consumables","🌟 Certified beauty therapists","✨ 15,000+ happy clients",
-    "💅 For Men & Women","🕒 Open 9 AM – 9 PM, All Days",
+    "🧖‍♀️ Skin-safe premium products","📍 Premium salon location","⭐ Top-rated service",
+    "🧼 Single-use consumables","🌟 Certified beauty therapists","✨ Trusted by many clients",
+    "💅 For Men & Women","🕒 Flexible working hours",
   ];
   const all = [...items,...items];
   return (
@@ -250,7 +269,7 @@ const SVCS = [
     img:IMG.maniPedi, col:C.mauve, lc:"#F7EDF5" },
   { emoji:"🌸",title:"Waxing & Body Polish",tag:"Smooth. Clean. Stress-free.",
     desc:"Premium waxes designed for Indian skin — gentle yet effective. For men & women.",
-    items:["Rica Wax (Sensitive skin, Tan removal)","Liposoluble Wax","Full Body, Half Arms, Underarms & Legs","Bikini Waxing — Men & Women","Brazilian Waxing — Men & Women","Private Part Waxing — Men & Women"],
+    items:["Premium Wax (Sensitive skin, Tan removal)","Liposoluble Wax","Full Body, Half Arms, Underarms & Legs","Bikini Waxing — Men & Women","Brazilian Waxing — Men & Women","Private Part Waxing — Men & Women"],
     img:IMG.waxing, col:C.deepRose, lc:"#FDEEE9" },
 ];
 
@@ -299,7 +318,9 @@ function Services() {
             <h2 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(38px,5vw,62px)",color:C.text,fontWeight:400,lineHeight:1.1,marginTop:14 }}>
               Luxe Skin &amp; Beauty<br/><em style={{ color:C.deepRose }}>Services</em>
             </h2>
-            <p style={{ fontFamily:"'DM Sans'",fontSize:15,color:C.muted,marginTop:14,fontWeight:300 }}>Starting ₹999 · For Men &amp; Women · Alwarpet, Chennai</p>
+            <p style={{ fontFamily:"'DM Sans'",fontSize:15,color:C.muted,marginTop:14,fontWeight:300 }}>
+              Starting ₹999 · For Men &amp; Women · Premium Salon
+            </p>
           </div>
         </Reveal>
         <div className="svc-grid" style={{ display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:20 }}>
@@ -337,8 +358,8 @@ function Services() {
 /* ═══ WHY US ═══ */
 const BADGES = [
   { icon:"🧖‍♀️",title:"Skin-safe Products",desc:"Dermatologist-approved formulas for all skin types" },
-  { icon:"📍",title:"Premium Location",desc:"Exclusive Alwarpet spot — quiet, calm, zero rush" },
-  { icon:"⭐",title:"4.8 Google Rating",desc:"15,000+ clients trust us for their beauty rituals" },
+  { icon:"📍",title:"Premium Location",desc:"Calm, comfortable space designed for relaxation" },
+  { icon:"⭐",title:"Top-rated Service",desc:"Loved by clients for quality and consistency" },
   { icon:"🧼",title:"Strict Hygiene",desc:"Single-use consumables, sterilised tools every visit" },
   { icon:"🌟",title:"Expert Therapists",desc:"Certified & trained in advanced skin analysis" },
 ];
@@ -354,7 +375,7 @@ function WhyUs() {
               <div style={{ borderRadius:32,overflow:"hidden",height:"100%",minHeight:"420px",position:"relative" }}>
                 <img 
   src={IMG.salon} 
-  alt="GlamSquad Salon" 
+  alt="Salon Interior" 
   loading="lazy"
   style={{ width:"100%",height:"100%",objectFit:"cover",display:"block" }}
 />
@@ -367,37 +388,41 @@ function WhyUs() {
             </div>
           </Reveal>
 
-          {/* text col */}
-          <Reveal dir="right">
-            <span className="pill">Why Choose Us</span>
-            <h2 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(34px,4vw,54px)",color:C.text,fontWeight:400,lineHeight:1.1,margin:"16px 0 18px" }}>
-              A space built for<br/><em style={{ color:C.deepRose }}>your comfort</em>
-            </h2>
-            <p style={{ fontFamily:"'DM Sans'",fontSize:15,color:C.muted,lineHeight:1.8,fontWeight:300,marginBottom:32 }}>
-              Whether it's a monthly ritual or a pre-event glow-up, we're here to make beauty feel effortless — and unforgettable. Unisex salon open all days, 9 AM to 9 PM.
-            </p>
-            <div style={{ display:"flex",flexDirection:"column",gap:12,marginBottom:36 }}>
-              {BADGES.map(b=>(
-                <div key={b.title} className="trust-item">
-                  <div style={{ width:40,height:40,background:C.blush,borderRadius:12,display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,flexShrink:0 }}>{b.icon}</div>
-                  <div>
-                    <div style={{ fontFamily:"'DM Sans'",fontSize:14,fontWeight:500,color:C.text,marginBottom:2 }}>{b.title}</div>
-                    <div style={{ fontFamily:"'DM Sans'",fontSize:13,color:C.muted,fontWeight:300 }}>{b.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ display:"flex",gap:14,flexWrap:"wrap" }}>
-              <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn-rose">Book Appointment</a>
-              <a href={CALL} className="btn-ghost">📞 Call Now</a>
-            </div>
-          </Reveal>
+        {/* text col */}
+<Reveal dir="right">
+  <span className="pill">Why Choose Us</span>
+  <h2 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(34px,4vw,54px)",color:C.text,fontWeight:400,lineHeight:1.1,margin:"16px 0 18px" }}>
+    A space built for<br/><em style={{ color:C.deepRose }}>your comfort</em>
+  </h2>
+
+  <p style={{ fontFamily:"'DM Sans'",fontSize:15,color:C.muted,lineHeight:1.8,fontWeight:300,marginBottom:32 }}>
+    Whether it's a monthly ritual or a pre-event glow-up, we're here to make beauty feel effortless — and unforgettable. Unisex salon with flexible working hours.
+  </p>
+
+  <div style={{ display:"flex",flexDirection:"column",gap:12,marginBottom:36 }}>
+    {BADGES.map(b=>(
+      <div key={b.title} className="trust-item">
+        <div style={{ width:40,height:40,background:C.blush,borderRadius:12,display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,flexShrink:0 }}>{b.icon}</div>
+        <div>
+          <div style={{ fontFamily:"'DM Sans'",fontSize:14,fontWeight:500,color:C.text,marginBottom:2 }}>{b.title}</div>
+          <div style={{ fontFamily:"'DM Sans'",fontSize:13,color:C.muted,fontWeight:300 }}>{b.desc}</div>
         </div>
       </div>
-    </section>
-  );
-}
+    ))}
+  </div>
 
+  <div style={{ display:"flex",gap:14,flexWrap:"wrap" }}>
+    <a href={BOOKING} target="_blank" rel="noopener noreferrer" className="btn-rose">
+      Book Demo Appointment
+    </a>
+    <a href={CALL} className="btn-ghost">📞 Call Now</a>
+  </div>
+</Reveal>
+</div>
+</div>
+</section>
+);
+}
 /* ═══ GALLERY ═══ */
 function Gallery() {
   const pics = [IMG.g1,IMG.g2,IMG.g3,IMG.g4,IMG.g5,IMG.g6];
@@ -412,11 +437,12 @@ function Gallery() {
             </h2>
           </div>
         </Reveal>
+
         <div className="gal-grid" style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:14 }}>
           {pics.map((src,i)=>(
             <Reveal key={i} delay={i*.07}>
               <div className="gal-item" style={{ aspectRatio: "3/4" }}>
-                <img src={src} alt={`GlamSquad result ${i+1}`}/>
+                <img src={src} alt={`Salon result ${i+1}`}/>
                 <div className="gal-overlay">
                   <div style={{ background:C.white,borderRadius:"50%",width:48,height:48,display:"flex",alignItems:"center",justifyContent:"center",fontSize:20 }}>✨</div>
                 </div>
@@ -424,10 +450,11 @@ function Gallery() {
             </Reveal>
           ))}
         </div>
+
         <Reveal delay={.2}>
           <div style={{ textAlign:"center",marginTop:36 }}>
-            <a href="https://www.instagram.com/glamsquad.life/" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-              📸 View More on Instagram @glamsquad.life
+            <a href="https://instagram.com/demo.salon" target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              📸 View More on Instagram @demo.salon
             </a>
           </div>
         </Reveal>
@@ -438,9 +465,9 @@ function Gallery() {
 
 /* ═══ TESTIMONIALS ═══ */
 const TESTI = [
-  { name:"Anjali D.",loc:"T. Nagar",stars:5,text:"Hands down the best mani-pedi I've ever had — my polish lasted weeks with zero chips!" },
-  { name:"Nivetha K.",loc:"Adyar",stars:5,text:"Brazilian Waxing here is next-level — no bumps, no irritation, just smooth skin. I never dread waxing anymore. Brought my hubby here too!" },
-  { name:"Reema S.",loc:"Nungambakkam",stars:5,text:"I booked their glow facial + spa pedicure before my cousin's wedding — the results were stunning. My photos looked amazing!" },
+  { name:"Anjali D.",loc:"Client Review",stars:5,text:"Hands down the best mani-pedi I've ever had — my polish lasted weeks with zero chips!" },
+  { name:"Nivetha K.",loc:"Client Review",stars:5,text:"Brazilian Waxing here is next-level — no bumps, no irritation, just smooth skin. I never dread waxing anymore. Brought my hubby here too!" },
+  { name:"Reema S.",loc:"Client Review",stars:5,text:"I booked their glow facial + spa pedicure before my cousin's wedding — the results were stunning. My photos looked amazing!" },
 ];
 
 function Testimonials() {
@@ -455,6 +482,7 @@ function Testimonials() {
             </h2>
           </div>
         </Reveal>
+
         <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:22 }}>
           {TESTI.map((t,i)=>(
             <Reveal key={t.name} delay={i*.14}>
@@ -473,18 +501,19 @@ function Testimonials() {
             </Reveal>
           ))}
         </div>
+
         <Reveal delay={.3}>
           <div style={{ textAlign:"center",marginTop:44 }}>
             <div style={{ display:"inline-flex",alignItems:"center",gap:22,background:C.white,border:`1px solid ${C.rose}50`,borderRadius:20,padding:"18px 38px",boxShadow:"0 8px 32px rgba(196,128,106,.1)",flexWrap:"wrap",justifyContent:"center" }}>
               <div>
-                <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:50,color:C.deepRose,fontWeight:600,lineHeight:1 }}>4.8</div>
+                <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:50,color:C.deepRose,fontWeight:600,lineHeight:1 }}>★ Demo</div>
                 <div style={{ color:"#F5C842",fontSize:18,letterSpacing:3 }}>★★★★★</div>
               </div>
               <div style={{ width:1,height:52,background:`${C.rose}55` }}/>
               <div>
                 <div style={{ fontFamily:"'DM Sans'",fontSize:14,color:C.muted }}>Trusted by</div>
-                <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:24,color:C.text,fontWeight:600 }}>15,000+ Clients</div>
-                <div style={{ fontFamily:"'DM Sans'",fontSize:11,color:C.deepRose,letterSpacing:2,textTransform:"uppercase" }}>Google Verified</div>
+                <div style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:24,color:C.text,fontWeight:600 }}>Many Happy Clients</div>
+                <div style={{ fontFamily:"'DM Sans'",fontSize:11,color:C.deepRose,letterSpacing:2,textTransform:"uppercase" }}>Demo Showcase</div>
               </div>
             </div>
           </div>
@@ -493,7 +522,6 @@ function Testimonials() {
     </section>
   );
 }
-
 /* ═══ CTA BANNER ═══ */
 function CTABanner() {
   return (
@@ -504,27 +532,34 @@ function CTABanner() {
         {[0,30,60,90,120,150,180,210,240,270,300,330].map(r=><ellipse key={r} cx="100" cy="100" rx="12" ry="52" fill="#fff" transform={`rotate(${r} 100 100)`}/>)}
         <circle cx="100" cy="100" r="14" fill="#fff"/>
       </svg>
+
       <div style={{ maxWidth:780,margin:"0 auto",textAlign:"center",position:"relative" }}>
         <Reveal>
-          <p style={{ fontFamily:"'DM Sans'",fontSize:11,color:"rgba(255,255,255,.6)",letterSpacing:3,textTransform:"uppercase",marginBottom:16 }}>Limited Slots Available Daily</p>
+          <p style={{ fontFamily:"'DM Sans'",fontSize:11,color:"rgba(255,255,255,.6)",letterSpacing:3,textTransform:"uppercase",marginBottom:16 }}>
+            Demo Booking Experience
+          </p>
+
           <h2 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(34px,5vw,60px)",color:"#fff",fontWeight:400,lineHeight:1.1,marginBottom:16 }}>
             Ready for your<br/><em>glow-up?</em>
           </h2>
+
           <p style={{ fontFamily:"'DM Sans'",fontSize:15,color:"rgba(255,255,255,.7)",marginBottom:40,fontWeight:300,lineHeight:1.7 }}>
-            Whether it's a monthly ritual or a pre-event glow-up — we're here to make beauty feel effortless.<br/>Free cancellation. T&amp;C Apply. GST Applicable.
+            Whether it's a monthly ritual or a pre-event glow-up — this demo shows how your salon website could feel.
           </p>
+
           <div style={{ display:"flex",gap:16,justifyContent:"center",flexWrap:"wrap" }}>
             <a href={BOOKING} target="_blank" rel="noopener noreferrer"
               style={{ background:"#fff",color:C.deepRose,padding:"17px 42px",borderRadius:50,fontFamily:"'DM Sans'",fontSize:13,fontWeight:500,letterSpacing:1.5,textTransform:"uppercase",transition:"all .3s" }}
               onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-3px)";e.currentTarget.style.boxShadow="0 12px 32px rgba(0,0,0,.2)"}}
               onMouseLeave={e=>{e.currentTarget.style.transform="none";e.currentTarget.style.boxShadow="none"}}>
-              📅 Book Online (Free Cancellation)
+              📅 Book Demo Online
             </a>
+
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
               style={{ background:"rgba(255,255,255,.15)",color:"#fff",padding:"17px 38px",borderRadius:50,fontFamily:"'DM Sans'",fontSize:13,fontWeight:400,letterSpacing:1,textTransform:"uppercase",border:"1px solid rgba(255,255,255,.3)",transition:"background .3s" }}
               onMouseEnter={e=>(e.currentTarget.style.background="rgba(255,255,255,.25)")}
               onMouseLeave={e=>(e.currentTarget.style.background="rgba(255,255,255,.15)")}>
-              💬 Book on WhatsApp
+              💬 Chat on WhatsApp
             </a>
           </div>
         </Reveal>
@@ -535,7 +570,7 @@ function CTABanner() {
 
 /* ═══ FAQ ═══ */
 const FAQS = [
-  { q:"Do you offer sensitive-skin-friendly waxing?", a:"Yes — Rica and Brazilian stripless waxes are ideal for delicate skin." },
+  { q:"Do you offer sensitive-skin-friendly waxing?", a:"Yes — premium and Brazilian stripless waxes are ideal for delicate skin." },
   { q:"Do you offer gentle facials for reactive skin?", a:"Yes, we have fragrance-free and soothing options suitable for sensitive skin." },
   { q:"How long before an event should I book a facial or waxing?", a:"1–3 days before is ideal to let the skin settle and glow naturally." },
   { q:"Do you offer private part hair removal for men — and is it safe for first-timers?", a:"Absolutely. We use premium Brazilian wax and maintain strict hygiene to ensure comfort and safety. Experienced wax therapists only." },
@@ -582,24 +617,31 @@ function Footer() {
       <div style={{ maxWidth:1200,margin:"0 auto" }}>
         <div className="footer-grid" style={{ display:"grid",gridTemplateColumns:"1.5fr 1fr 1fr",gap:60,paddingBottom:60,borderBottom:"1px solid rgba(255,255,255,.1)" }}>
           <div>
-            <h3 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:36,color:C.rose,fontWeight:400,marginBottom:8 }}>GlamSquad</h3>
-            <p style={{ fontFamily:"'DM Sans'",fontSize:11,color:"rgba(255,255,255,.3)",letterSpacing:3.5,textTransform:"uppercase",marginBottom:18 }}>Alwarpet · Chennai</p>
-            <p style={{ fontFamily:"'DM Sans'",fontSize:14,color:"rgba(255,255,255,.45)",lineHeight:1.7,fontWeight:300,maxWidth:280,marginBottom:28 }}>
-              A premium unisex salon in Chennai — open all days, 9 AM to 9 PM. Experience calm, precision, and care.
+            <h3 style={{ fontFamily:"'Cormorant Garamond',serif",fontSize:36,color:C.rose,fontWeight:400,marginBottom:8 }}>
+              GlowBeauty Studio
+            </h3>
+
+            <p style={{ fontFamily:"'DM Sans'",fontSize:11,color:"rgba(255,255,255,.3)",letterSpacing:3.5,textTransform:"uppercase",marginBottom:18 }}>
+              Premium Salon · Your City
             </p>
-           <div style={{ display:"flex",gap:12 }}>
-  {[
-    { l:"Instagram", h:"https://www.instagram.com/glamsquad.life/", ic:"📷" },
-    { l:"Facebook", h:"https://www.facebook.com/salonglamsquad", ic:"📘" }
-  ].map(s=>(
-    <a key={s.l} href={s.h} target="_blank" rel="noopener noreferrer"
-      style={{ background:"rgba(255,255,255,.08)",border:"1px solid rgba(255,255,255,.1)",borderRadius:10,padding:"10px 16px",fontFamily:"'DM Sans'",fontSize:12,color:"rgba(255,255,255,.55)",transition:"all .3s" }}
-      onMouseEnter={e=>{e.currentTarget.style.borderColor=C.deepRose;e.currentTarget.style.color="#fff"}}
-      onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.1)";e.currentTarget.style.color="rgba(255,255,255,.55)"}}>
-      {s.ic} {s.l}
-    </a>
-  ))}
-</div>
+
+            <p style={{ fontFamily:"'DM Sans'",fontSize:14,color:"rgba(255,255,255,.45)",lineHeight:1.7,fontWeight:300,maxWidth:280,marginBottom:28 }}>
+              A premium unisex salon demo — designed to showcase modern beauty services, clean UI, and smooth booking experience.
+            </p>
+
+            <div style={{ display:"flex",gap:12 }}>
+              {[
+                { l:"Instagram", h:"https://instagram.com/demo.salon", ic:"📷" },
+                { l:"Facebook", h:"https://facebook.com/demo.salon", ic:"📘" }
+              ].map(s=>(
+                <a key={s.l} href={s.h} target="_blank" rel="noopener noreferrer"
+                  style={{ background:"rgba(255,255,255,.08)",border:"1px solid rgba(255,255,255,.1)",borderRadius:10,padding:"10px 16px",fontFamily:"'DM Sans'",fontSize:12,color:"rgba(255,255,255,.55)",transition:"all .3s" }}
+                  onMouseEnter={e=>{e.currentTarget.style.borderColor=C.deepRose;e.currentTarget.style.color="#fff"}}
+                  onMouseLeave={e=>{e.currentTarget.style.borderColor="rgba(255,255,255,.1)";e.currentTarget.style.color="rgba(255,255,255,.55)"}}>
+                  {s.ic} {s.l}
+                </a>
+              ))}
+            </div>
           </div>
           <div>
             <h4 style={{ fontFamily:"'DM Sans'",fontSize:11,color:C.deepRose,letterSpacing:3,textTransform:"uppercase",marginBottom:22 }}>Find Us</h4>
@@ -635,24 +677,26 @@ function Footer() {
               ))}
             </div>
           </div>
-        </div>
-        <div style={{ padding:"22px 0",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12 }}>
-          <p style={{ fontFamily:"'DM Sans'",fontSize:12,color:"rgba(255,255,255,.22)" }}>2026 © The GlamSquad Salon Chennai, Alwarpet. All rights reserved.</p>
-          <div style={{ display:"flex",gap:24 }}>
-            {[{l:"Privacy Policy",h:"https://www.glamsquad.in/privacypolicy"},{l:"Terms of Service",h:"https://www.glamsquad.in/termsofservice"}].map(x=>(
-              <a key={x.l} href={x.h} target="_blank" rel="noopener noreferrer"
-                style={{ fontFamily:"'DM Sans'",fontSize:12,color:"rgba(255,255,255,.22)",transition:"color .2s" }}
-                onMouseEnter={e=>(e.target.style.color=C.rose)} onMouseLeave={e=>(e.target.style.color="rgba(255,255,255,.22)")}>
-                {x.l}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+</div>
+<div style={{ padding:"22px 0",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:12 }}>
+  <p style={{ fontFamily:"'DM Sans'",fontSize:12,color:"rgba(255,255,255,.22)" }}>
+    2026 © GlowBeauty Studio (Demo). All rights reserved. ⚠️ This is a demo website created for portfolio purposes.
+  </p>
 
+  <div style={{ display:"flex",gap:24 }}>
+    {[{l:"Privacy Policy",h:"https://example.com/privacy"},{l:"Terms of Service",h:"https://example.com/terms"}].map(x=>(
+      <a key={x.l} href={x.h} target="_blank" rel="noopener noreferrer"
+        style={{ fontFamily:"'DM Sans'",fontSize:12,color:"rgba(255,255,255,.22)",transition:"color .2s" }}
+        onMouseEnter={e=>(e.target.style.color=C.rose)} onMouseLeave={e=>(e.target.style.color="rgba(255,255,255,.22)")}>
+        {x.l}
+      </a>
+    ))}
+  </div>
+</div>
+</div>
+</section>
+);
+}
 /* ═══ FLOATING CTAS ═══ */
 function FloatingCTAs() {
   const [show,setShow] = useState(false);
