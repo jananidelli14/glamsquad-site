@@ -646,11 +646,11 @@ function Footer() {
           <div>
             <h4 style={{ fontFamily:"'DM Sans'",fontSize:11,color:C.deepRose,letterSpacing:3,textTransform:"uppercase",marginBottom:22 }}>Find Us</h4>
             {[
-              {ic:"📍",val:"Alwarpet, Chennai"},
+              {ic:"📍",val:"Chennai"},
               {ic:"🕒",val:"Open All Days, 9 AM – 9 PM"},
-              {ic:"📞",val:"+91 63795 22874",h:CALL},
-              {ic:"📞",val:"+91 72000 30480"},
-              {ic:"📸",val:"@glamsquad.life",h:"https://www.instagram.com/glamsquad.life/"},
+              {ic:"📞",val:"+91 1234567897",h:CALL},
+              {ic:"📞",val:"+91 1234567894"},
+              {ic:"📸",val:"@demo-online-life",h:"https://www.instagram.com/glamsquad.life/"},
             ].map((d,i)=>(
               <div key={i} style={{ display:"flex",gap:10,alignItems:"flex-start",marginBottom:13 }}>
                 <span style={{ fontSize:13,marginTop:1 }}>{d.ic}</span>
@@ -666,7 +666,7 @@ function Footer() {
               {[
                 {l:"📅 Book Appointment Online",h:BOOKING,bg:C.deepRose,hbg:C.accent,co:"#fff"},
                 {l:"💬 Chat on WhatsApp",h:WHATSAPP,bg:"#25d366",hbg:"#1ebe5d",co:"#fff"},
-                {l:"📞 +91 63795 22874",h:CALL,bg:"rgba(255,255,255,.06)",hbg:"rgba(255,255,255,.12)",co:"rgba(255,255,255,.7)"},
+                {l:"📞 +91 1234567891",h:CALL,bg:"rgba(255,255,255,.06)",hbg:"rgba(255,255,255,.12)",co:"rgba(255,255,255,.7)"},
               ].map(b=>(
                 <a key={b.l} href={b.h} target="_blank" rel="noopener noreferrer"
                   style={{ background:b.bg,color:b.co,padding:"14px 20px",borderRadius:12,fontFamily:"'DM Sans'",fontSize:13,fontWeight:500,textAlign:"center",border:`1px solid rgba(255,255,255,.08)`,transition:"all .3s" }}
